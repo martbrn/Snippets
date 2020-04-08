@@ -1,6 +1,6 @@
 (function($){
     $(document).ready(function() {
-      $("#idsubmit-button").click(function() {
+      $("#id-submit-button").click(function() {
         var $form = $(this);
         if ($form.data('submitted') === true) {
         $(this).attr("disabled", true);
