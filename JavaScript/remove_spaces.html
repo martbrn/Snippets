@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click the button to join the array elements into a string.</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+
+function myFunction() {
+  var fruits = ["Banana letra ñ"];
+  var x = document.getElementById("demo");
+  fruits[0] = fruits[0].match(/^[  A-zÀ-ú]*$/g).join("");
+    var string = fruits[0];
+  string = string.split(' ').join("");
+  x.innerHTML = string;
+}
+</script>
+</body>
+</html>
