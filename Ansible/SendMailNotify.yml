@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks: 
+  - name: Send e-mail notifying
+    mail: 
+      host: SMTP SERVER
+      subject: "SUBJECT"
+      body: |
+        Hello, this is a notify test.
+      from: FROM E-MAIL
+      to: TO E-MAIL
+      attach:
+      - FILES FROM SERVER
+      charset: us-ascii
+    delegate_to: localhost

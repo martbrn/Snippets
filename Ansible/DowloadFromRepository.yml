@@ -1,0 +1,19 @@
+- hosts: all
+  tasks: 
+    - name: Download from repository
+      get_url:
+        url: URL_Repository.zip
+        dest: /home/user1/file.zip
+        timeout: 1000
+    - name: Extract archives 
+      unarchive:
+        src: /home/user1/file.zip
+        dest: /home/user1/
+        remote_src: yes
+    - name: Execute command for install, and have a promt question
+      shell: echo -e "1" | /home/user1/file/file.sh
+    - name: Adding user to a group  
+      user: 
+        name: user1
+        groups: group1
+        append: yes    

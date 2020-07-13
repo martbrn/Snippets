@@ -1,0 +1,37 @@
+- hosts: all
+  tasks:
+    - name: Create a group with a specific ID
+      group: 
+        name: group1
+        gid: 500
+    - name: Crate user with a specific ID
+      user:
+        name: user1
+        uid: 500
+        home: /home/user1
+        group: group1
+        comment: Its a user 1
+        password: user1pw
+    - name: Add user in sudoers to run commands without sudo
+      lineinfile:
+        path: /etc/sudoers
+        regexp: '^%user1'
+        line: "%user1    ALL=(ALL)       NOPASSWD: ALL"
+        state: present
+    - name: Copy ssh key
+      copy:
+        src: ~/id_rsa
+        dest: /home/user1/.ssh/
+    - name: Set authorized key for user, add public Key File
+      authorized_key:
+        user: user1
+        state: present
+        key: "{{ lookup('file', '~/id_rsa.pub') }}" 
+    - name: Setting known hosts, if you have to connect hosts, to not need to enter the password
+      known_hosts:
+        host: "{{ hostvars[item]['ansible_host'] }}"
+        key: "{{ hostvars[item]['ansible_host'] }},{{ hostvars[item]['networks'][1]['ip'] }} ecdsa-sha2-nistp256 {{ hostvars[item]['ansible_ssh_host_key_ecdsa_public'] }}"
+        path: /home/user1/.ssh/known_hosts
+      loop: "{{ groups.all }}"
+          
+
