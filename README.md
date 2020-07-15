@@ -6,10 +6,10 @@
 
 ## Directories
 
--> Ansible : Particular playbooks,for automatization!
+-> 	**Ansible** : Particular playbooks,for automatization!
 
--> Arduino : Very simple projects for arduino!
+-> 	**Arduino** : Very simple projects for arduino!
 
--> Javascript : Functions to use, remove spaces etc.
+-> 	**Javascript** : Functions to use, remove spaces etc.
 
--> Python: Trash code, CTFs etc
+-> 	**Python**: Trash code, CTFs etc
