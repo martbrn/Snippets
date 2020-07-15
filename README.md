@@ -7,6 +7,9 @@
 ## Directories
 
 -> Ansible : Particular playbooks,for automatization!
+
 -> Arduino : Very simple projects for arduino!
+
 -> Javascript : Functions to use, remove spaces etc.
+
 -> Python: Trash code, CTFs etc
