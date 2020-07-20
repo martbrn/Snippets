@@ -4,15 +4,15 @@
 import requests
 import argparse
 
-parser = argparse.ArgumentParser(description="Head Detector")
-parser.add_argument('-o','--objective',help="objective")
-parser = parser.parse_args()
+headpar = argparse.ArgumentParser(description="Head Detector")
+headpar.add_argument('-o','--objective',help="objective")
+headpar = headpar.parse_args()
 
 
 def main():
-	if parser.objective:
+	if headpar.objective:
 		try:
-			url = requests.get(parser.objective)
+			url = requests.get(headpar.objective)
 			headers = dict(url.headers)
 			for x in headers:
 				print(x + " : " + headers[x])
