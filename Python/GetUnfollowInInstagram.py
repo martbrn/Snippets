@@ -5,8 +5,8 @@ import json
 # Link sobre como realizar la descarga: https://www.movilzona.es/noticias/aplicaciones/descargar-informacion-instagram-sobre-ti/
 # Rango de fecha: Desde el inicio de los tiempos. En formato JSON. Puedes solicitar solo la informacion de Seguidores y Seguidos, por no descargar toda la informacion.
 # Se te descargara un archivo .zip , pero solo nos interesa la parte de seguidores/seguidos. Buscar los siguientes archivos (followers_1.json ; following.json) e incluir la ruta en la variable: 
-# Ejemplo de como deberia quedar la varIable followers_path = "C:......\\followers_1.json"
-# Ejemplo de como deberia quedar la varIable following_path = "C:......\\following.json"
+# Ejemplo de como deberia quedar la variable followers_path = "C:......\\followers_1.json"
+# Ejemplo de como deberia quedar la variable following_path = "C:......\\following.json"
 
 # Rutas de los archivos JSON
 followers_path = "INCLUIR RUTA ARCHIVO (followers_1.json)"
